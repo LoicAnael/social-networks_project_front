@@ -1,0 +1,39 @@
+@import "./setting";
+
+.sign-background {
+  background-color: $white;
+  height: 100vh;
+  @include flexItem(center, center, unset);
+  .signin-content {
+    height: 330px;
+    width: 20%;
+    @include flexItem(center, space-between, column);
+    .form {
+      width: 100%;
+      height: 70%;
+      color: $primary-color;
+      @include flexItem(flex-end, space-between, column);
+      &-input {
+        position: relative;
+        background-color: $tertiary-color;
+        @include flexItem(center, space-between, row);
+        width: 100%;
+        .input-icon {
+          position: absolute;
+          right: 10px;
+          color: $primary-color;
+        }
+      }
+      .signin {
+        border: none;
+        background-color: $tertiary-color;
+      }
+    }
+  }
+  @include media-query(668px) {
+    .signin-content {
+      width: 90%;
+      margin-right: 10px;
+    }
+  }
+}
