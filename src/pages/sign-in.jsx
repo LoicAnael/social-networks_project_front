@@ -7,12 +7,12 @@ import { faUser, faLock } from "@fortawesome/free-solid-svg-icons";
 
 function SignIn() {
   const [values, setValues] = useState({
-    email: "",
+    pseudo: "",
     password: "",
   });
   const navigate = useNavigate();
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     navigate("/home");
   };
@@ -31,11 +31,13 @@ function SignIn() {
         <form className="form" onSubmit={handleSubmit}>
           <div className="form-input">
             <input
-              type="email"
-              name="email"
+              className="input"
+              type="text"
+              name="pseudo"
               onChange={handleChange}
-              id="email"
+              id="pseudo"
               placeholder="Pseudo ou mail"
+              required
             />
             <span className="input-icon">
               <FontAwesomeIcon icon={faUser} />
@@ -43,11 +45,13 @@ function SignIn() {
           </div>
           <div className="form-input">
             <input
+              className="input"
               type="password"
               name="password"
               onChange={handleChange}
               id="password"
               placeholder="Mot de passe"
+              required
             />
             <span className="input-icon">
               <FontAwesomeIcon icon={faLock} />
@@ -57,7 +61,9 @@ function SignIn() {
             <Link to="./forgot-password">Mot de passe oublié ?</Link>
           </div>
           <button className="form-button signin">CONNECTION</button>
-          <button className="form-button signup">INSCRIPTION</button>
+          <Link to="./signUp" className="form-button signup">
+            INSCRIPTION
+          </Link>
         </form>
       </section>
     </main>

@@ -1,0 +1,13 @@
+@import "./setting";
+
+.cgu-container {
+  @include flexItem(center, flex-start, row);
+  width: 100%;
+  gap: 5px;
+  .cgu-btn {
+    color: inherit;
+    font-weight: 600;
+    font-family: sans-serif;
+    cursor: pointer;
+  }
+}

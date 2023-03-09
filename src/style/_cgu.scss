@@ -1,0 +1,22 @@
+@import "./setting";
+
+.cgu-content {
+  @include flexItem(center, center, column);
+  margin-right: 5px;
+  h2 {
+    margin: 0;
+    font-size: 24px;
+    text-decoration: underline;
+  }
+  p {
+    font-size: 18px;
+  }
+  @include media-query(668px) {
+    h2 {
+      font-size: 20px;
+    }
+    p {
+      font-size: 14px;
+    }
+  }
+}
